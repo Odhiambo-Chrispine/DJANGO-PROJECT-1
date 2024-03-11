@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="icon" href="{% static 'logo 1.png' %}">
+
+    <link rel="stylesheet" href="{% static 'auth.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color: blueviolet;">
+   
+    <nav style="height: 60px;" class="navbar navbar-expand-lg navbar-light bg-primary">
+    </nav>
+
+    <form style="margin-top: 40px;margin-bottom: 40px;margin-left: 180px;margin-right: 180px; background-color: aqua;padding: 40px; font-size: 22px;font-weight: 700;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;border-radius: 5px;box-shadow:6px 6px 6px 6px goldenrod;" method="POST" autocomplete="off">
+        
+        <a href="{% url 'user_logout' %}"><img style="border-radius: 50%;margin-left: 400px;margin-right: 80px;" src="{% static 'logo 1.png' %}" width="100px" height="100px"></a>
+
+        <h1 style="text-shadow: 5px 5px 6px blueviolet;color: gold;font-size: 46px;font-weight: 800;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin-top: auto;margin-bottom: 20px;">registration form</h1>
+        <hr>
+        {% csrf_token %}
+
+        {{registerForm.as_p}}
+
+        <input style="background-color: rgb(5, 12, 105); font-weight: 800; color: white; width: auto;border-radius: 5px;margin-left: 400px;margin-right: 80px;" type="submit" value="register"/>
+
+        <h2 style="font-weight: 700; text-align: center; margin: 20px;">Already have an account?<a style="text-decoration: none; color: rgb(240, 12, 171);" href="{% url 'login' %}"> click </a>to signin</h2>
+
+    </form>
+
+    <button style="margin-top: 10px;margin-left: 1200px;margin-right: 10px;margin-bottom: 20px;" class="btn btn-primary"><a style="color: white;font-size: 16px;font-weight: 700;text-decoration: none;" href="{% url 'register' %}">Back to top</a></button> 
+
+</body>
+</html>

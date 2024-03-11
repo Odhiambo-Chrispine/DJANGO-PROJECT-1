@@ -1,0 +1,14 @@
+a,li{
+    font-size: 26px;
+    font-weight: 800;
+}
+
+button:hover{
+    background-color: gold;
+    transition: .8s ease;
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+}
